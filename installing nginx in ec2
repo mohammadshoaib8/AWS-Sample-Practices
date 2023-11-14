@@ -1,0 +1,13 @@
+# installing nginx in ec2 ubuntu instance.
+# $ Sudo su (super user)
+$ apt-get update -y (update)
+$ apt-get install nginx -y (installing nginx)
+$ nginx -t (checking nginx configuration)
+$ service nginx status 
+$ curl localhost (we get out put from index.html)
+$ cd /var/www/html (here we get index.html file )
+$ ls
+$ index.nginx-debian.html
+$ vi index.html (writing a context in html file)
+$ curl localhost (we get new changes we recently don , we can check by public ip also we get
+  like below.
