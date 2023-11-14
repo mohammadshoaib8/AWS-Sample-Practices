@@ -1,0 +1,12 @@
+#list the blocks you attached
+$ lsblk
+#formating 
+$ mkfs.ext4 /dev/xvdf
+#make a directory
+$ mkdir /test/
+#mounting between the volume and directory 
+$ mount /dev/xvdf /test/
+#checking mounted or not 
+$ mountpoint /test/
+#unmounting 
+$ umount /test/
