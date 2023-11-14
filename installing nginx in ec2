@@ -9,5 +9,13 @@ $ cd /var/www/html (here we get index.html file )
 $ ls
 $ index.nginx-debian.html
 $ vi index.html (writing a context in html file)
+  welcome to learning.hub.com
 $ curl localhost (we get new changes we recently don , we can check by public ip also we get
   like below.
+###############################################################################################
+# we can write above manual steps as a shell script in ec2 user-data.
+
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+echo "welcome to learning.hub.com" > /var/www/html/index.html
