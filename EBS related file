@@ -10,3 +10,18 @@ $ mount /dev/xvdf /test/
 $ mountpoint /test/
 #unmounting 
 $ umount /test/
+#we can resize manually,and we can see by bellow command.df command displays the amount of disk space available on the file system.
+$ df -h
+#we can resize volume block but can't file system,we need to resize file system too by below cmd.
+$ resize2fs /dev/xvdf 
+$ df -h (now we can use the block storage which we increased).
+#we can't decrease the block storage size but we can do one thing that is we can create another volume and mount it and transfer the data from first volume.
+#we can increase the root volume manually and following the bellow steps. 
+$ lsblk (#list the blocks,here we can see the block size increased)
+$ df -h (#here we coudn't see the increased size)
+$ file -s /dev/xvdf1 (#this cmd checking that which file system it has)
+$ resize2fs /dev/xvdf1 (here we get nothing to do,because we resize first partitions for that we use 'growpart'cmd)
+$ growpart /dev/xvdf 1 (here we grows partition but not it's file system)
+$ df -h
+$ resize2fs /dev/xvdf1
+$ df -h
