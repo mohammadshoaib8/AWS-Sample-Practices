@@ -25,3 +25,14 @@ $ growpart /dev/xvdf 1 (here we grows partition but not it's file system)
 $ df -h
 $ resize2fs /dev/xvdf1
 $ df -h
+##################################################################################################################
+# make sure you first do formate then only you can mount it.
+$ fdisk -l
+$ mkfs.ext4 /dev/xvdf
+$ dh -f (we can't get ,so we do mount then we get our volume).
+$ mkdir /test
+$ mount /dev/xvdf /test/
+$ mountpoint /test/
+$ umount /dev/xvdf /test/
+$ rsync -aHAXxSP /sorce-mount-dir/ /destination-mount-dir/
+
